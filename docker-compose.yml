@@ -1,0 +1,9 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: duc-portfolio
+    restart: unless-stopped
+    ports:
+      - "8080:80"

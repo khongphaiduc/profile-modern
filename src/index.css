@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-obsidian: #0A0B0F;
+    --color-soft-black: #15161C;
+    --color-warm-ivory: #F3EFE8;
+    --color-champagne: #D7B38C;
+    --color-sunset-amber: #F6A86C;
+    --color-periwinkle: #A9B4F7;
+    
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Space Grotesk', monospace;
+    --font-handwriting: 'Reenie Beanie', cursive;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0A0B0F;
+    color: #F3EFE8;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #0A0B0F;
+    color: #F3EFE8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    selection-background-color: rgba(246, 168, 108, 0.3);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0B0F;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252836;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D7B38C;
+  }
+}
+
+/* Custom Typography Utilities */
+.font-serif-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'Space Grotesk', monospace;
+}
+
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+.font-borel {
+  font-family: 'Borel', cursive;
+}
+
+/* Subtle Film Grain Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Glass & Brutalist Architectural Panels */
+.glass-panel-dark {
+  background: rgba(21, 22, 28, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(243, 239, 232, 0.08);
+}
+
+.glass-panel-amber {
+  background: rgba(246, 168, 108, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(246, 168, 108, 0.2);
+}
+
+.glass-panel-ivory {
+  background: #F3EFE8;
+  color: #0A0B0F;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Text stroke for editorial outline effect */
+.text-stroke-amber {
+  -webkit-text-stroke: 1px rgba(246, 168, 108, 0.6);
+  color: transparent;
+}
+
+.text-stroke-ivory {
+  -webkit-text-stroke: 1px rgba(243, 239, 232, 0.5);
+  color: transparent;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
