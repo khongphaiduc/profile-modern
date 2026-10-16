@@ -45,6 +45,7 @@ export const PORTFOLIO_DATA = {
     location: 'Hà Nội, Việt Nam',
     github: 'https://github.com/khongphaiduc',
     linkedin: 'https://linkedin.com/in/trungducpham',
+    facebook: 'https://www.facebook.com/phamtrungduc1011',
     university: 'FPT University',
     major: 'Software Engineering',
     educationPeriod: '2022 - 2026',
@@ -90,7 +91,7 @@ export const PORTFOLIO_DATA = {
       category: 'Microservices & Distributed Architecture',
       year: 'Dec 2025 — Present',
       role: 'Solo Developer',
-      image: '/images/project-foodly.png',
+      image: '/images/project-foodly.webp',
       description: 'An enterprise food ordering platform architected with Domain-Driven Design (DDD) and Event-Driven Architecture. Solves complex distributed transactions across cart, order, payment, and inventory services with eventual consistency and atomic concurrency guarantees.',
       architectureDetails: [
         'Choreography-based Saga: Orchestrated distributed transactions across Order, Inventory, Payment, and Cart, leveraging Inbox/Outbox patterns, idempotency, and compensating actions for eventual consistency.',
@@ -130,7 +131,7 @@ export const PORTFOLIO_DATA = {
       category: 'Web Application & Concurrency Control',
       year: 'Aug 2025 — Dec 2025',
       role: 'Solo Developer',
-      image: '/images/project-nestone.png',
+      image: '/images/project-nestone.webp',
       description: 'A full-stack hotel management and reservation platform designed to handle high booking concurrency. Resolves race conditions during room reservations through Redis-based distributed locking and background worker queues.',
       architectureDetails: [
         'Redis Distributed Lock: Implemented distributed locks to resolve concurrency race conditions and completely eliminate double-booking during peak reservation periods.',
@@ -166,7 +167,7 @@ export const PORTFOLIO_DATA = {
       category: 'Full-Stack E-Commerce & Cloud Storage',
       year: '2024',
       role: 'Backend Developer',
-      image: '/images/project-lemstem.png',
+      image: '/images/project-lemstem.webp',
       description: 'A comprehensive educational kit e-commerce platform dedicated to STEM learning materials. Engineered with high-throughput order checkout, rich media delivery via Cloudflare R2, and automated deployment pipelines.',
       architectureDetails: [
         'Cloudflare R2 Integration: High-speed S3-compatible asset delivery for kit blueprints, tutorials, and images with zero egress cost.',
@@ -199,7 +200,7 @@ export const PORTFOLIO_DATA = {
       category: 'Embedded IoT & Automated Control',
       year: '2023',
       role: 'Embedded Developer',
-      image: '/images/project-smartparking.png',
+      image: '/images/project-smartparking.webp',
       description: 'An automated IoT barrier and guidance system engineered with Arduino microcontrollers, ultrasonic distance telemetry, servo-driven access control, and dynamic alphanumeric status displays.',
       architectureDetails: [
         'Sensor Array Processing: Real-time ultrasonic obstacle sensing calculating spot vacancies in under 50ms.',

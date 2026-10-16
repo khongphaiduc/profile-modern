@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { PORTFOLIO_DATA } from '../data/portfolio';
 import { Mail, Copy, Check, ArrowUpRight } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from '../components/ui/Icons';
+import { GithubIcon, LinkedinIcon, FacebookIcon } from '../components/ui/Icons';
 import { MagneticButton } from '../components/ui/MagneticButton';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -70,7 +70,7 @@ export const Contact: React.FC = () => {
         className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform pointer-events-none"
       >
         <img
-          src="/images/contact-background.png"
+          src="/images/contact-background.webp"
           alt="Monumental circular concrete arch overlooking sunset cityscape"
           className="w-full h-full object-cover object-center filter brightness-[0.75] contrast-[1.12]"
         />
@@ -171,6 +171,15 @@ export const Contact: React.FC = () => {
           >
             <LinkedinIcon className="w-4 h-4" />
             <span>LinkedIn</span>
+          </a>
+          <a
+            href={PORTFOLIO_DATA.profile.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 hover:border-[#F6A86C] hover:bg-[#F6A86C]/10 transition-colors text-xs font-mono-tech uppercase tracking-wider"
+          >
+            <FacebookIcon className="w-4 h-4" />
+            <span>Facebook</span>
           </a>
         </div>
 

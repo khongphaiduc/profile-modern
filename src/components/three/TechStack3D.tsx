@@ -439,7 +439,7 @@ export const TechStack3D: React.FC<TechStack3DProps> = ({ onSelectNode }) => {
     return (
       <div className="relative w-full h-[540px] flex items-center justify-center rounded-2xl overflow-hidden border border-white/10 bg-[#15161C]/80 p-8">
         <img
-          src="/images/tech-stack.png"
+          src="/images/tech-stack.webp"
           alt="Technical Ecosystem Architecture"
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         />

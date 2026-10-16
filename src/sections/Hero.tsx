@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import myAvatar from '../assets/myavatar.jpg';
+import myAvatar from '../assets/myavatar.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
         className="absolute inset-0 w-full h-[115%] -top-[7%] will-change-transform pointer-events-none"
       >
         <img
-          src="/images/hero-background.png"
+          src="/images/hero-background.webp"
           alt="Brutalist architectural sunset scenery"
           className="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.08]"
         />

@@ -193,7 +193,7 @@ export const MiddleSection: React.FC = () => {
               {/* Tall Vertical Mountain Photo Billboard Rising Above the Ivory Panel */}
               <div className="relative w-36 sm:w-44 lg:w-48 shrink-0 -ml-2 -mb-2 z-20 shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden rounded-r-xl border-l border-white/20 aspect-[3/4.8]">
                 <img
-                  src="/images/about-landscape.png"
+                  src="/images/about-landscape.webp"
                   alt="Mountain ridges with sun rays"
                   className="w-full h-full object-cover filter contrast-[1.08] brightness-95"
                 />

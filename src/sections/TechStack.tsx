@@ -65,7 +65,7 @@ export const TechStack: React.FC = () => {
           {showCompositionRef ? (
             <div className="relative w-full h-[580px] lg:h-[680px] rounded-3xl overflow-hidden border border-white/15 bg-[#15161C] shadow-2xl group">
               <img
-                src="/images/tech-stack.png"
+                src="/images/tech-stack.webp"
                 alt="Architectural Composition Reference for Tech Stack"
                 className="w-full h-full object-cover filter contrast-[1.05]"
               />

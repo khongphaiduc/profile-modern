@@ -106,7 +106,7 @@ export const About: React.FC = () => {
             <div className="lg:col-span-3">
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] group">
                 <img
-                  src="/images/about-landscape.png"
+                  src="/images/about-landscape.webp"
                   alt="Mountain range landscape"
                   className="w-full h-full object-cover filter contrast-[1.05] brightness-95 group-hover:scale-105 transition-transform duration-500"
                 />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, ArrowUp } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from '../ui/Icons';
+import { GithubIcon, LinkedinIcon, FacebookIcon } from '../ui/Icons';
 import { PORTFOLIO_DATA } from '../../data/portfolio';
 
 export const Footer: React.FC = () => {
@@ -99,6 +99,15 @@ export const Footer: React.FC = () => {
                 aria-label="LinkedIn Profile"
               >
                 <LinkedinIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={PORTFOLIO_DATA.profile.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#F3EFE8] hover:border-[#F6A86C] hover:bg-[#F6A86C]/10 transition-colors"
+                aria-label="Facebook Profile"
+              >
+                <FacebookIcon className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${PORTFOLIO_DATA.profile.email}`}
