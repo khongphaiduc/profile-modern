@@ -44,7 +44,7 @@ export const PORTFOLIO_DATA = {
     website: 'https://phamtrungduc.info',
     location: 'Hà Nội, Việt Nam',
     github: 'https://github.com/khongphaiduc',
-    linkedin: 'https://linkedin.com/in/trungducpham',
+    linkedin: 'https://www.linkedin.com/in/ptrungduc1011',
     facebook: 'https://www.facebook.com/phamtrungduc1011',
     university: 'FPT University',
     major: 'Software Engineering',

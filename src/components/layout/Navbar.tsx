@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon, Download } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -60,14 +60,6 @@ export const Navbar: React.FC = () => {
 
           {/* Right: Theme Toggle + Download CV */}
           <div className="flex items-center gap-3.5">
-            {/* Theme Toggle Button */}
-            <button
-              type="button"
-              className="w-9 h-9 rounded-full border border-white/15 bg-white/[0.03] flex items-center justify-center text-[#F3EFE8]/80 hover:text-[#F3EFE8] hover:border-white/30 transition-all cursor-pointer"
-              aria-label="Toggle theme"
-            >
-              <Moon className="w-4 h-4" />
-            </button>
 
             {/* Download CV Pill Button */}
             <button
