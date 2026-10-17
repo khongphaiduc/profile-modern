@@ -63,7 +63,7 @@ export const AppleHelloIntro: React.FC<AppleHelloIntroProps> = ({ onComplete }) 
         y: '-100%', 
         transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] } 
       }}
-      className="fixed inset-0 z-[999999] bg-[#07080B] text-[#F3EFE8] flex flex-col justify-between overflow-hidden select-none"
+      className="fixed inset-0 z-[999999] bg-[#07080B] text-[#F3EFE8] flex flex-col items-center justify-center p-6 sm:p-12 overflow-hidden select-none cursor-pointer"
       onClick={handleDismiss}
     >
         {/* Ambient Studio Backlight */}
@@ -81,19 +81,16 @@ export const AppleHelloIntro: React.FC<AppleHelloIntroProps> = ({ onComplete }) 
           }}
         />
 
-        {/* Top Header */}
-        <div className="relative z-20 max-w-[1440px] w-full mx-auto px-6 sm:px-10 pt-8 flex items-center justify-between">
-          {/* Brand Mark */}
-          <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[#F6A86C] shadow-[0_0_10px_#F6A86C]" />
-            <span className="text-xs font-mono-tech tracking-[0.25em] uppercase text-[#F3EFE8]/70">
-              PHAM TRUNG DUC
-            </span>
-          </div>
+        {/* Top Brand Mark */}
+        <div className="absolute top-8 left-8 sm:left-12 z-20 flex items-center gap-2.5 pointer-events-none">
+          <span className="w-2 h-2 rounded-full bg-[#F6A86C] shadow-[0_0_10px_#F6A86C]" />
+          <span className="text-xs font-mono-tech tracking-[0.25em] uppercase text-[#F3EFE8]/70">
+            PHAM TRUNG DUC
+          </span>
         </div>
 
         {/* Center Writing Canvas */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 sm:px-12">
+        <div className="relative z-10 w-full flex flex-col items-center justify-center px-6">
           {/* SVG Container with Apple Glowing Effects */}
           <div className="relative w-full max-w-[620px] sm:max-w-[740px] flex items-center justify-center">
             {/* Apple "hello" SVG handwriting */}
@@ -217,31 +214,6 @@ export const AppleHelloIntro: React.FC<AppleHelloIntroProps> = ({ onComplete }) 
               Building scalable backend architecture &amp; distributed systems
             </motion.p>
           </motion.div>
-        </div>
-
-        {/* Bottom Bar: Touch/Click to Enter hint */}
-        <div className="relative z-20 max-w-[1440px] w-full mx-auto px-6 pb-8 flex items-center justify-between text-[11px] font-mono-tech text-[#F3EFE8]/40">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#8ea3fa] animate-ping" />
-            <span className="tracking-widest uppercase">PORTFOLIO EXHIBITION 2026</span>
-          </div>
-
-          <motion.div 
-            animate={{ opacity: [0.35, 0.9, 0.35] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="hidden sm:flex items-center gap-2 cursor-pointer hover:text-[#F3EFE8]"
-            onClick={handleDismiss}
-          >
-            <span>TAP ANYWHERE OR PRESS</span>
-            <kbd className="px-1.5 py-0.5 rounded text-[10px] bg-white/10 border border-white/10 font-mono text-[#F3EFE8]/70">
-              SPACE
-            </kbd>
-            <span>TO ENTER</span>
-          </motion.div>
-
-          <div className="text-right">
-            <span>HA NOI, VIET NAM</span>
-          </div>
         </div>
       </motion.div>
     );
