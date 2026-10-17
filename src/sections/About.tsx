@@ -5,7 +5,7 @@ import { PORTFOLIO_DATA } from '../data/portfolio';
 export const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Introduction');
 
-  const navItems = ['Introduction', 'Education', 'Interests', 'What I Do'];
+  const navItems = ['Introduction', 'Experience', 'Skills', 'Education'];
 
   return (
     <section id="about" className="relative w-full py-16 lg:py-24 bg-[#0A0B0F] overflow-hidden">
@@ -55,10 +55,10 @@ export const About: React.FC = () => {
             {/* Center: Biography Description & CTA */}
             <div className="lg:col-span-4 space-y-6">
               <p className="text-sm sm:text-base text-[#0A0B0F]/85 font-sans-ui leading-relaxed">
-                I&apos;m Phạm Trung Đức, a Software Engineering student at FPT University. I&apos;m passionate about building web applications, solving real-world problems and continuously learning new technologies.
+                I&apos;m Phạm Trung Đức, a Backend Developer with hands-on experience in building scalable, reliable, and high-performance applications.
               </p>
               <p className="text-sm sm:text-base text-[#0A0B0F]/85 font-sans-ui leading-relaxed">
-                I enjoy turning ideas into useful software products.
+                Skilled in .NET / C#, Microservices Architecture, RabbitMQ event-driven choreography, Redis distributed caching, database optimization, and automated CI/CD pipelines using Docker. Passionate about designing efficient backend systems, solving complex technical challenges, and continuously improving software quality.
               </p>
 
               <div className="pt-2">
@@ -75,11 +75,11 @@ export const About: React.FC = () => {
             {/* Metrics Stats: 5+, 2+, 100% */}
             <div className="lg:col-span-2 flex flex-row lg:flex-col justify-between lg:justify-start gap-6 border-y lg:border-y-0 lg:border-l border-[#0A0B0F]/15 py-4 lg:py-0 lg:pl-8">
               <div>
-                <span className="text-3xl sm:text-4xl font-serif-editorial font-bold text-[#0A0B0F] block">
-                  5+
+                <span className="text-2xl sm:text-3xl font-serif-editorial font-bold text-[#0A0B0F] block">
+                  99.9%
                 </span>
                 <span className="text-xs font-sans-ui text-[#0A0B0F]/70 block leading-tight mt-1">
-                  Projects <br /> Completed
+                  System <br /> Reliability
                 </span>
               </div>
 

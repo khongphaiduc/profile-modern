@@ -8,16 +8,12 @@ export const MiddleSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Introduction');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const navItems = ['Introduction', 'Education', 'Experience', 'Skills'];
+  const navItems = ['Introduction', 'Experience', 'Skills', 'Education'];
 
   const tabContents: Record<string, { p1: string; p2: string }> = {
     Introduction: {
-      p1: "I'm Phạm Trung Đức, a Backend Developer and Software Engineering student at FPT University (Hà Nội).",
-      p2: "Passionate about building scalable microservices, distributed systems, high-concurrency caching and production-ready applications with .NET, RabbitMQ, and Redis.",
-    },
-    Education: {
-      p1: "FPT University (2022 — 2026) · Software Engineering major.",
-      p2: "Solid foundation in Data Structures, OOP, Database Architecture, and Distributed Systems. Certified IELTS 6.0 English proficiency (2025).",
+      p1: "I'm Phạm Trung Đức, a Backend Developer with hands-on experience in building scalable, reliable, and high-performance applications.",
+      p2: "Skilled in .NET / C#, Microservices Architecture, RabbitMQ event-driven choreography, Redis distributed caching, database optimization, and automated CI/CD pipelines using Docker. Passionate about designing efficient backend systems, solving complex technical challenges, and continuously improving software quality.",
     },
     Experience: {
       p1: "Freelancer Backend Developer (May 2026 — Present) & FPT Software (Sep 2025 — April 2026).",
@@ -26,6 +22,10 @@ export const MiddleSection: React.FC = () => {
     Skills: {
       p1: "BackEnd: C#, .NET Core, ASP.NET Core, EF Core, Microservices, RESTful API. Databases: SQL Server, PostgreSQL, Redis.",
       p2: "Messaging & DevOps: RabbitMQ, SignalR, Worker Service, Docker & Compose, CI/CD Jenkins, Git, Postman, xUnitTest.",
+    },
+    Education: {
+      p1: "FPT University (2022 — 2026) · Software Engineering major.",
+      p2: "Solid foundation in Data Structures, OOP, Database Architecture, and Distributed Systems. Certified IELTS 6.0 English proficiency (2025).",
     },
   };
 
@@ -160,11 +160,11 @@ export const MiddleSection: React.FC = () => {
                   {/* Column 3: Stats (5+, IELTS 6.0, 100%) */}
                   <div className="sm:col-span-3 space-y-3 border-l border-[#0A0B0F]/15 pl-3.5 flex flex-col justify-center">
                     <div>
-                      <span className="text-2xl font-serif-editorial font-bold text-[#0A0B0F] leading-none block">
-                        5+
+                      <span className="text-xl sm:text-2xl font-serif-editorial font-bold text-[#0A0B0F] leading-none block">
+                        99.9%
                       </span>
                       <span className="text-[10px] font-sans-ui text-[#0A0B0F]/70 block leading-tight mt-0.5">
-                        Projects <br /> Completed
+                        System <br /> Reliability
                       </span>
                     </div>
 

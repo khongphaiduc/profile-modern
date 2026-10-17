@@ -51,16 +51,16 @@ export const PORTFOLIO_DATA = {
     educationPeriod: '2022 - 2026',
     certification: 'IELTS 6.0 (2025)',
     introBio: 'Building scalable microservices, high-concurrency systems and resilient backend web applications with .NET, C#, RabbitMQ and Redis.',
-    aboutFull: "I'm Phạm Trung Đức, a Backend Developer and Software Engineering student at FPT University. I have hands-on experience building scalable RESTful APIs at FPT Software and architecting distributed systems with event-driven Saga patterns, Redis distributed locks, and automated CI/CD pipelines.",
+    aboutFull: "I'm Phạm Trung Đức, a Backend Developer with hands-on experience in building scalable, reliable, and high-performance applications. Skilled in .NET / C#, Microservices Architecture, RabbitMQ event-driven choreography, Redis distributed caching, database optimization, and automated CI/CD pipelines using Docker. Passionate about designing efficient backend systems, solving complex technical challenges, and continuously improving software quality.",
     editorialQuote: "Architecting resilient backends with clean boundaries and distributed precision.",
     handwrittenNote: "form follows function — engineering follows resilience",
   },
 
   aboutNavigation: [
     { label: 'Introduction', href: '#about-intro' },
-    { label: 'Education', href: '#about-education' },
     { label: 'Experience', href: '#about-experience' },
     { label: 'Skills', href: '#about-skills' },
+    { label: 'Education', href: '#about-education' },
   ],
 
   interests: [
@@ -232,7 +232,7 @@ export const PORTFOLIO_DATA = {
     { name: 'ASP.NET Core', category: 'BackEnd', level: 'Web Framework', description: 'RESTful API development, dependency injection, middleware pipelines, and JWT security.' },
     { name: 'EF Core', category: 'BackEnd', level: 'ORM', description: 'Entity Framework Core for relational modeling, LINQ queries, and database migrations.' },
     { name: 'Microservices', category: 'BackEnd', level: 'Architecture', description: 'Domain-Driven Design (DDD), distributed transactions, Saga choreography, and gRPC communication.' },
-    
+
     // Database
     { name: 'SQL Server', category: 'Database', level: 'Relational DB', description: 'Relational database design, indexes, transactional integrity, and stored procedures.' },
     { name: 'PostgreSQL', category: 'Database', level: 'Relational DB', description: 'ACID transactions, JSONB querying, and isolated microservice data stores.' },
