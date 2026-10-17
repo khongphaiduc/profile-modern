@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Download } from 'lucide-react';
 
-interface NavbarProps {
-  onReplayIntro?: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ onReplayIntro }) => {
+export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -45,22 +41,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onReplayIntro }) => {
           }`}
       >
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 flex items-center justify-between">
-          {/* Left: Apple Hello Replay Button */}
-          {onReplayIntro ? (
-            <button
-              type="button"
-              onClick={onReplayIntro}
-              title="Replay Apple Hello effect"
-              className="group flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-[#F6A86C]/40 transition-all cursor-pointer select-none"
-            >
-              <span className="font-borel text-base text-[#F3EFE8]/80 group-hover:text-[#F6A86C] transition-colors -rotate-2 inline-block">
-                hello
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F6A86C]/70 group-hover:scale-125 transition-transform" />
-            </button>
-          ) : (
-            <div className="w-6 sm:w-8" aria-hidden="true" />
-          )}
+          {/* Left Empty Placeholder for Balance */}
+          <div className="w-6 sm:w-8" aria-hidden="true" />
 
 
           {/* Center Navigation Links */}
@@ -121,18 +103,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onReplayIntro }) => {
               </a>
             ))}
             <div className="pt-6 border-t border-white/10 flex flex-col gap-3">
-              {onReplayIntro && (
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onReplayIntro();
-                  }}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#F6A86C]/40 bg-[#F6A86C]/10 text-[#F6A86C] text-sm cursor-pointer"
-                >
-                  <span className="font-borel text-lg">hello</span>
-                  <span>Replay Apple Intro</span>
-                </button>
-              )}
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

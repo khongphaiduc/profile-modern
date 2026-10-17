@@ -56,7 +56,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Minimal Top Navigation */}
-      <Navbar onReplayIntro={() => setCurtainActive(true)} />
+      <Navbar />
 
       {/* Main Exhibition Layout Matching Reference Design */}
       <main>

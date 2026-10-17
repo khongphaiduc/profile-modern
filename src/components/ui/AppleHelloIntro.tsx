@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Globe, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface AppleHelloIntroProps {
   onComplete: () => void;
 }
 
 export const AppleHelloIntro: React.FC<AppleHelloIntroProps> = ({ onComplete }) => {
-  const [lang, setLang] = useState<'en' | 'vi'>('en');
+  const [lang] = useState<'en' | 'vi'>('en');
   const [isWritten, setIsWritten] = useState(false);
-  const [animKey, setAnimKey] = useState(0);
+  const [animKey] = useState(0);
   const autoDismissTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Speed factor: 0.85 gives an energetic yet elegant, authentic handwriting pace
@@ -45,17 +44,6 @@ export const AppleHelloIntro: React.FC<AppleHelloIntroProps> = ({ onComplete }) 
       handleDismiss();
     }, 1500);
   }, [handleDismiss]);
-
-  // Reset when lang changes
-  const switchLang = (newLang: 'en' | 'vi') => {
-    if (newLang === lang) return;
-    if (autoDismissTimerRef.current) {
-      clearTimeout(autoDismissTimerRef.current);
-    }
-    setIsWritten(false);
-    setLang(newLang);
-    setAnimKey((k) => k + 1);
-  };
 
   const initialPath = {
     pathLength: 0,
@@ -95,7 +83,7 @@ export const AppleHelloIntro: React.FC<AppleHelloIntroProps> = ({ onComplete }) 
           }}
         />
 
-        {/* Top Header Controls */}
+        {/* Top Header */}
         <div className="relative z-20 max-w-[1440px] w-full mx-auto px-6 sm:px-10 pt-8 flex items-center justify-between">
           {/* Brand Mark */}
           <div className="flex items-center gap-2.5">
@@ -103,51 +91,6 @@ export const AppleHelloIntro: React.FC<AppleHelloIntroProps> = ({ onComplete }) 
             <span className="text-xs font-mono-tech tracking-[0.25em] uppercase text-[#F3EFE8]/70">
               PHAM TRUNG DUC
             </span>
-          </div>
-
-          {/* Controls: Language toggle + Skip button */}
-          <div 
-            className="flex items-center gap-3"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Language Switcher */}
-            <div className="inline-flex items-center p-1 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md">
-              <button
-                type="button"
-                onClick={() => switchLang('en')}
-                className={`px-3 py-1 rounded-full text-[11px] font-sans-ui transition-all ${
-                  lang === 'en'
-                    ? 'bg-[#F6A86C] text-[#0A0B0F] font-semibold shadow-md'
-                    : 'text-[#F3EFE8]/70 hover:text-[#F3EFE8]'
-                }`}
-              >
-                Hello
-              </button>
-              <button
-                type="button"
-                onClick={() => switchLang('vi')}
-                className={`px-3 py-1 rounded-full text-[11px] font-sans-ui transition-all ${
-                  lang === 'vi'
-                    ? 'bg-[#F6A86C] text-[#0A0B0F] font-semibold shadow-md'
-                    : 'text-[#F3EFE8]/70 hover:text-[#F3EFE8]'
-                }`}
-              >
-                Xin chào
-              </button>
-            </div>
-
-            {/* Skip Button */}
-            <button
-              type="button"
-              onClick={handleDismiss}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/10 border border-white/15 text-xs font-sans-ui text-[#F3EFE8]/80 hover:text-[#F3EFE8] transition-all cursor-pointer group"
-            >
-              <span>Skip</span>
-              <kbd className="hidden sm:inline-block px-1.5 py-0.2 rounded text-[10px] bg-white/10 border border-white/15 font-mono text-[#F3EFE8]/60">
-                ESC
-              </kbd>
-              <ArrowRight className="w-3 h-3 text-[#F3EFE8]/60 group-hover:translate-x-0.5 transition-transform" />
-            </button>
           </div>
         </div>
 
