@@ -7,11 +7,16 @@ import myAvatar from '../assets/myavatar.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  isIntroDone?: boolean;
+}
+
+export const Hero: React.FC<HeroProps> = ({ isIntroDone = false }) => {
   const heroRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const svgPathRef = useRef<SVGPathElement>(null);
 
+  // Parallax background
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (bgRef.current) {
@@ -27,25 +32,36 @@ export const Hero: React.FC = () => {
           },
         });
       }
-
-      if (svgPathRef.current) {
-        const length = svgPathRef.current.getTotalLength();
-        gsap.set(svgPathRef.current, {
-          strokeDasharray: length,
-          strokeDashoffset: length,
-        });
-
-        gsap.to(svgPathRef.current, {
-          strokeDashoffset: 0,
-          duration: 2.2,
-          delay: 0.6,
-          ease: 'power2.out',
-        });
-      }
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
+
+  // Luminous thread line: starts drawing only after the hello curtain is done
+  useEffect(() => {
+    if (!svgPathRef.current) return;
+
+    const length = svgPathRef.current.getTotalLength();
+    if (!length) return;
+
+    gsap.set(svgPathRef.current, {
+      strokeDasharray: length,
+      strokeDashoffset: length,
+    });
+
+    if (isIntroDone) {
+      const tween = gsap.to(svgPathRef.current, {
+        strokeDashoffset: 0,
+        duration: 2.4,
+        delay: 0.45,
+        ease: 'power2.out',
+      });
+
+      return () => {
+        tween.kill();
+      };
+    }
+  }, [isIntroDone]);
 
   return (
     <section
@@ -87,15 +103,16 @@ export const Hero: React.FC = () => {
           d="M 60 520 C 280 500, 480 320, 850 480 S 1320 220, 1460 300"
           fill="none"
           stroke="url(#curveGradient)"
-          strokeWidth="1.6"
+          strokeWidth="2"
+          className="drop-shadow-[0_0_12px_rgba(246,168,108,0.4)]"
         />
       </svg>
 
       {/* Circular Avatar Frame on the Right - Responsive on mobile, tablet & desktop */}
       <motion.div
         initial={{ opacity: 0, scale: 0.85 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
+        animate={isIntroDone ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
+        transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
         className="block absolute right-5 top-24 sm:right-10 sm:top-28 md:right-[8%] lg:right-[12%] xl:right-[15%] md:top-[16%] lg:top-[18%] z-20"
       >
         <div className="relative group">
@@ -155,8 +172,8 @@ export const Hero: React.FC = () => {
           {/* Main Title: Pham Trung Đức */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            animate={isIntroDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 1, delay: 0.1 }}
           >
             <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.2rem] font-serif-editorial font-bold tracking-tight leading-[0.92] text-[#F3EFE8]">
               Pham <br />
@@ -167,8 +184,8 @@ export const Hero: React.FC = () => {
           {/* Subtitle: . N E T   B A C K E N D   D E V E L O P E R */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            animate={isIntroDone ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
             className="mt-6 flex items-center gap-2"
           >
             <span className="text-xs sm:text-sm font-mono-tech uppercase tracking-[0.35em] text-[#8ea3fa] font-medium">
@@ -179,8 +196,8 @@ export const Hero: React.FC = () => {
           {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.55 }}
+            animate={isIntroDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-5 text-sm sm:text-base lg:text-lg text-[#F3EFE8]/80 max-w-xl font-sans-ui leading-relaxed"
           >
             I build scalable web applications, microservices and real-world products using .NET, cloud technologies and modern development practices.
@@ -189,8 +206,8 @@ export const Hero: React.FC = () => {
           {/* CTA Button: (->) View My Works */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            animate={isIntroDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.55 }}
             className="mt-8 flex items-center gap-6"
           >
             <a
@@ -208,7 +225,7 @@ export const Hero: React.FC = () => {
         {/* Bottom Left: SCROLL DOWN indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={isIntroDone ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
           className="flex items-center gap-3 text-xs font-mono-tech uppercase tracking-[0.25em] text-white/50"
         >

@@ -61,7 +61,7 @@ export default function App() {
       {/* Main Exhibition Layout Matching Reference Design */}
       <main>
         {/* Top: Cinematic Hero Section */}
-        <Hero />
+        <Hero isIntroDone={!curtainActive} />
 
         {/* Middle Band: 01. About Me (Left) + 02. Featured Projects (Right) */}
         <MiddleSection />
